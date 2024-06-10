@@ -1,0 +1,28 @@
+{
+    "staging": {
+        "s3_bucket": "copc-urls-zappa-1-us",
+        "aws_region": "us-east-1",
+        "app_function": "app.app",
+        "tags":{
+          "stage":"staging"
+        },
+        "environment_variables": {
+          "ENVIRONMENT": "staging"
+        }
+    },
+    "production": {
+        "s3_bucket": "copc-urls-zappa-1-us-production",
+        "aws_region": "us-east-1",
+        "app_function": "app.app",
+        "tags":{
+          "stage":"production"
+        },
+        "cors":true,
+        "certificate_arn": " arn:aws:acm:us-east-1:163178234892:certificate/2772f1c9-cc12-4a93-89d5-8ad18d3fa892",
+        "route53_enabled": false,
+        "domain": "short.copc.io",
+        "environment_variables": {
+          "ENVIRONMENT": "production"
+        }
+    }
+}
